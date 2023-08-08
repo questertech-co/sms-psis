@@ -1,0 +1,26 @@
+server:
+  port: 8001
+
+spring:
+  application:
+    name: psis
+  datasource:
+    url: jdbc:mysql://localhost:3306/psisdb?useSSL=false&serverTimezone=UTC
+    username: root
+    password: 97chocho
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create # Set to "create" if you want to create the schema on every start
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+        show_sql: true # Set to false in production
+        format_sql: true # Set to false in production
+eureka:
+  client:
+    instance:
+      hostname: localhost
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
